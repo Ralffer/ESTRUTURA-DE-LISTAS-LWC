@@ -1,0 +1,61 @@
+<template>
+	<lightning-card>
+		<div class='slds-m-around_medium'>
+			<h1 class="slds-text-heading_large">Estrutura de Dados </h1>
+			<p>Nome={pessoa.nome}</P>
+			<p> Cpf={pessoa.cpf}</p>
+			<p>Idade= {pessoa.idade}</p>
+		</div>
+		---------------------------------------------------------------------------------------
+		<div class='slds-m-around_medium'>
+			<h1 class="slds-text-heading_large">Account </h1>
+			<p>Nome={account.name}</p>
+			<p>Tipo={account.type}</p>
+			<p>Classificação={account.rating}</p>
+			<p>Web Site={account.website}</p>
+		</div>
+		---------------------------------------------------------------------------------------
+		<div class='slds-m-around_medium'>
+			<h1 class="slds-text-heading_large">Pokemon</h1>
+
+
+			<!--
+				modelo errado USAR O FOR:EACH TEMPLATE recebe lista de info
+				O templete ira repetir a quantidade de elementos da lista
+			for; item > determina o local onde cada valor da lista fica armazenado
+			a cada repetição.
+			ex: for (account a: listAccount){}
+			for:each (lstAccount)
+			<p>cod={pokemon.cod}</p>
+			<p>Nome={pokemon.name}</p>
+			<p>tipo={pokemon.tipo}</p>
+			<p>nivel={pokemon.nivel}</p>
+			-->
+			<template for:each={pokemon} for:item='poke'>
+				<p key={poke.cod}> Nome: {poke.nome} - Tipo: {poke.tipo} - Nivel {poke.nivel}</p>
+
+				<!--
+				<div key={poke.cod}>
+					<p>cod= {poke.cod}</p>
+					<p>Nome= {poke.nome}</p>
+					<p>tipo= {poke.tipo}</p>
+					<p>nivel= {poke.nivel}</p>
+				</div>
+	-->
+
+
+
+			</template>
+		</div>
+		-------------------------------------------------------------------------------------
+		<!-- classe de frutas-->
+
+		<div class='slds-m-around_medium'>
+			<h1 class="slds-text-heading_large">Frutas</h1>
+
+			<template for:each={frutas} for:item='fru'>
+				<p key={fru.cod}> Nome: {fru.nome} - Tipo: {fru.tipo} - Nivel {fru.nivel}</p>
+			</template>
+		</div>
+	</lightning-card>
+</template>
